@@ -1,0 +1,48 @@
+.nav{
+    position: sticky;
+    background-color: rgb(64, 64, 212);
+    color:white;
+    display:flex;
+}
+.nav h3:hover{
+    color: red;
+}
+.nav a{
+    color:white;
+    text-decoration: none;
+    margin-left: 15px;
+    margin-top:20px;
+    font-size: large;
+    font-weight: bold;
+        
+}
+.nav a:hover{
+    text-transform: capitalize;
+    color: pink;
+}
+body{
+    background-color: beige;
+}
+form{
+    display: flexbox;
+    margin-top: 10%;
+    text-align: center;
+}
+input:hover{
+    background-color: gray;
+    cursor: pointer;
+    color: white;
+    }
+#btn:hover{
+    color:blue;
+    background-color: gold ;
+}
+footer{
+    background-color:aquamarine;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer p{
+    margin-left: 10px;
+}

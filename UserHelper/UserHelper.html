@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserHelper</title>
+    <!-- <script src="smallp.js"></script> -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="nav">
+        <h3 >Govind Prasad Lakhotia</h3>
+        <a href="https://github.com/gplakhotiya/UserHelper">github</a>
+      </div>
+      <div class="form">
+        <form id ="form" >
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" id="fname" required>
+            <br>
+            <br>
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" id="lname">
+            <br><br>
+            <label for="num">Mobile No.:</label>
+            <input type="number" name="num" id="num">
+            <br>
+             <br>
+             <input type="submit" id="btn" value="Submit">
+    
+        </form>
+      </div>
+
+      <div>
+        <footer>
+          <hr>
+          <p>Thank you</p>
+        </footer>
+      </div>
+      
+    
+    <div id="print"></div>
+   
+</body>
+
+ <script>
+    const form =document.getElementById('form')
+    form.addEventListener('submit', function(event){
+        event.preventDefault()
+        var FirstName =document.getElementById('fname').value
+        var LastName=document.getElementById('lname').value
+        var Mobile =document.getElementById('num').value
+        var data={
+        FirstName:FirstName,
+        LastName:LastName,
+        MobileNo:Mobile
+    }
+    
+        data= JSON.stringify(data);
+        var file = new Blob([data],{type:Text},);  //why we use blob ?
+        // saveAs(blob, "data.txt");  
+        //  json.dump  why ??
+          // with open('myfile.json', 'w', encoding ='utf8') as json_file:
+          //  json.dump(d, json_file, allow_nan=False)
+
+        var anchor = document.createElement("a");
+        anchor.href =URL.createObjectURL(file);
+        anchor.download = "data.txt";
+        anchor.click();
+    })
+    </script>
+</html>
